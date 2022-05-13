@@ -24,6 +24,8 @@ date:{
     default: Date.now
 }
   });
+  const user = mongoose.model('user',UserSchema);
                             //  model name     schema name
                             //     ||           ||
-  module.exports = mongoose.model('user',UserSchema)
+    user.createIndexes();  //this is for updating only new collections  elements                 
+  module.exports = user
